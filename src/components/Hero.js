@@ -84,7 +84,7 @@ const Hero = () => {
             transition={{ delay: 1.3, duration: 0.8 }}
           >
             <motion.a
-              href="https://github.com/kushalkochar"
+              href="https://github.com/Kushal-Kochar"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"

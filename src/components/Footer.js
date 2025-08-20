@@ -58,7 +58,7 @@ const Footer = () => {
             <h4>Connect</h4>
             <div className="social-icons">
               <motion.a
-                href="https://github.com/kushalkochar"
+                href="https://github.com/Kushal-Kochar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
