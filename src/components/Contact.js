@@ -33,8 +33,8 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      // Formspree configuration - much more reliable!
-      const formspreeEndpoint = 'https://formspree.io/f/xzdprevpg'; // Your Formspree endpoint
+      // Formspree configuration with your existing account
+      const formspreeEndpoint = 'https://formspree.io/f/xzdprevpg'; // Your existing Formspree endpoint
       
       const submissionData = {
         name: formData.name,
@@ -43,9 +43,9 @@ const Contact = () => {
         message: formData.message,
       };
 
-      console.log('Sending email via Formspree:', submissionData);
+      console.log('Sending email via Formspree to kushjainjk45@gmail.com:', submissionData);
 
-      // Send email using Formspree (reliable and corporate-network friendly)
+      // Send email using Formspree
       const response = await fetch(formspreeEndpoint, {
         method: 'POST',
         headers: {
@@ -99,8 +99,8 @@ const Contact = () => {
           `Sent from your portfolio contact form`
         );
         
-        // Your actual email address
-        const mailtoLink = `mailto:kushalkochar45@gmail.com?subject=${subject}&body=${body}`;
+        // Your actual email address (Formspree account email)
+        const mailtoLink = `mailto:kushjainjk45@gmail.com?subject=${subject}&body=${body}`;
         
         // Open mailto link immediately
         window.open(mailtoLink, '_self');
@@ -344,7 +344,7 @@ const Contact = () => {
                     </p>
                   ) : (
                     <p>
-                      ❌ Something went wrong. Please try again or contact me directly at kushalkochar45@gmail.com
+                      ❌ Something went wrong. Please try again or contact me directly at kushjainjk45@gmail.com
                     </p>
                   )}
                 </motion.div>
