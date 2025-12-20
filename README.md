@@ -1,26 +1,26 @@
-# 🚀 Kushal Kochar - Full Stack Developer Portfolio
+# 🚀 Kushal Kochar - Software Development Engineer Portfolio
 
-A modern, responsive portfolio website built with React, Framer Motion, and modern CSS. Designed to showcase your skills, projects, and experience in an impressive way that will make you stand out to potential employers and clients.
+A modern, responsive portfolio website built with React.js showcasing my skills as a Software Development Engineer at Jio Platforms Ltd. Features fully functional projects, real-time integrations, and professional contact system.
 
 ## ✨ Features
 
 - **Modern Design**: Clean, professional design with smooth animations
-- **Fully Responsive**: Optimized for all devices and screen sizes
-- **Interactive Elements**: Smooth scrolling, hover effects, and micro-interactions
-- **Performance Optimized**: Fast loading with optimized animations
-- **SEO Friendly**: Semantic HTML and proper meta tags
-- **Accessibility**: WCAG compliant with proper focus management
-- **Contact Form**: Functional contact form (ready for EmailJS integration)
-- **Smooth Animations**: Powered by Framer Motion for engaging user experience
+- **Fully Responsive**: Optimized for all devices and screen sizes  
+- **Interactive Projects**: Live Weather Dashboard and Task Manager applications
+- **Real-time Data**: Weather API integration with live data
+- **Functional Contact Form**: Formspree integration for direct email delivery
+- **Professional UI/UX**: Smooth animations powered by Framer Motion
+- **Complete Projects**: Standalone React applications with full source code
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: React 19, CSS3, HTML5
+- **Frontend**: React.js, JavaScript ES6+, CSS3, HTML5
 - **Animations**: Framer Motion
-- **Icons**: React Icons
-- **Responsiveness**: CSS Grid & Flexbox
-- **Performance**: React Intersection Observer
-- **Contact**: EmailJS (ready for setup)
+- **Icons**: React Icons, Font Awesome
+- **Routing**: React Router DOM (Hash-based routing)
+- **APIs**: OpenWeatherMap API, Formspree
+- **Storage**: Local Storage for Task Manager
+- **Styling**: CSS Grid, Flexbox, Modern CSS features
 
 ## 🚀 Getting Started
 
@@ -82,9 +82,9 @@ Update the following files with your information:
 - Add/remove certifications
 
 #### Contact Section (`src/components/Contact.js`)
-- Update contact information (email, phone, location)
-- Modify social media links
-- Set up EmailJS for contact form functionality
+- Contact form integrated with Formspree (kushalkochar45@gmail.com)
+- Functional email delivery system
+- Mailto fallback for corporate networks
 
 ### 2. Styling & Colors
 
@@ -121,35 +121,32 @@ The portfolio uses Inter font family. You can change it in `src/index.css`:
 - Recommended size: 400x400px
 - Format: JPG or PNG
 
-### 4. Contact Form Setup
+### 4. Live Projects
 
-To enable the contact form functionality:
+This portfolio includes two fully functional React applications:
 
-1. **Sign up for EmailJS** at [emailjs.com](https://www.emailjs.com/)
-2. **Create an email service** (Gmail, Outlook, etc.)
-3. **Create an email template**
-4. **Update the Contact component** with your EmailJS credentials:
+#### Weather Dashboard (`/projects/weather-dashboard`)
+- **Real-time weather data** using OpenWeatherMap API
+- **5-day forecast** with detailed weather information
+- **Geolocation support** for current location weather
+- **Responsive design** with modern UI components
+- **Error handling** and fallback mechanisms
 
-```javascript
-// In src/components/Contact.js
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  
-  try {
-    await emailjs.sendForm(
-      'YOUR_SERVICE_ID',
-      'YOUR_TEMPLATE_ID',
-      formRef.current,
-      'YOUR_PUBLIC_KEY'
-    );
-    
-    setSubmitStatus('success');
-    // Reset form...
-  } catch (error) {
-    setSubmitStatus('error');
-  }
-};
-```
+#### Task Manager (`/projects/task-manager/frontend`)
+- **Complete CRUD operations** for task management
+- **Priority levels** and status tracking
+- **Local storage persistence** for data
+- **Search and filter functionality**
+- **Analytics dashboard** with progress tracking
+- **Responsive design** with smooth animations
+
+### 5. Contact Form (Already Configured)
+
+The contact form is fully functional with:
+- **Formspree integration** (https://formspree.io/f/xzdprevpg)
+- **Direct email delivery** to kushalkochar45@gmail.com
+- **Mailto fallback** for corporate networks
+- **Professional error handling** and user feedback
 
 ## 📱 Responsive Design
 

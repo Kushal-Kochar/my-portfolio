@@ -13,41 +13,17 @@ const Experience = () => {
   const workExperience = [
     {
       id: 1,
-      title: 'Senior Full Stack Developer',
-      company: 'TechCorp Solutions',
-      period: '2023 - Present',
-      description: 'Leading development of enterprise web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.',
-      technologies: ['React', 'Node.js', 'AWS', 'Docker', 'MongoDB'],
+      title: 'Software Development Engineer-1',
+      company: 'Jio Platforms Ltd., Mumbai, India',
+      period: 'Dec 2022 - Present',
+      description: 'Creating and maintaining reusable, scalable React.js components utilized across multiple projects, boosting development efficiency and ensuring consistent UI standards. Working closely with Backend and DevOps Teams to guarantee smooth end-to-end integration and deployment.',
+      technologies: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Java Spring Boot', 'SAP Fiori', 'CI/CD Pipelines', 'Git'],
       achievements: [
-        'Reduced application load time by 40% through optimization',
-        'Led a team of 5 developers on a major project',
-        'Implemented CI/CD pipeline reducing deployment time by 60%'
-      ]
-    },
-    {
-      id: 2,
-      title: 'Full Stack Developer',
-      company: 'Digital Innovations Inc.',
-      period: '2021 - 2023',
-      description: 'Developed and maintained multiple web applications. Collaborated with cross-functional teams to deliver high-quality software solutions.',
-      technologies: ['React', 'Express.js', 'PostgreSQL', 'Redis', 'Jest'],
-      achievements: [
-        'Built 3 major applications from concept to deployment',
-        'Improved code coverage to 90% through testing',
-        'Reduced bug reports by 35% through better error handling'
-      ]
-    },
-    {
-      id: 3,
-      title: 'Frontend Developer',
-      company: 'WebTech Solutions',
-      period: '2020 - 2021',
-      description: 'Focused on creating responsive and user-friendly interfaces. Worked closely with designers to implement pixel-perfect designs.',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Sass'],
-      achievements: [
-        'Developed 10+ responsive websites',
-        'Improved user engagement by 25%',
-        'Optimized performance for mobile devices'
+        'Created 6-7 reusable components, resulting in 15-20% boost in development efficiency',
+        'Developed and launched 9-10 fully functional application modules from end to end',
+        'Spearheaded migration of SAP Fiori application to open-source tech stack using React.js and Spring Boot',
+        'Built and fine-tuned REST APIs in Spring Boot to boost performance and system stability',
+        'Contributed to CI/CD deployment pipelines with hands-on exposure to automated builds and testing workflows'
       ]
     }
   ];
@@ -55,33 +31,40 @@ const Experience = () => {
   const education = [
     {
       id: 1,
-      degree: 'Bachelor of Computer Science',
-      institution: 'University of Technology',
-      period: '2016 - 2020',
-      description: 'Specialized in Software Engineering with focus on web technologies and database systems.',
-      achievements: ['Graduated with First Class Honours', 'Final Year Project: E-Learning Platform']
+      degree: 'B.Tech. in Computer Engineering',
+      institution: "SVKM's IOT, Dhule",
+      period: '2018 - 2022',
+      description: 'Specialized in Computer Engineering with focus on software development, web technologies and programming fundamentals.',
+      achievements: ['Strong foundation in programming and software development', 'Developed expertise in modern web technologies and frameworks']
     }
   ];
 
   const certifications = [
     {
       id: 1,
-      name: 'AWS Certified Developer Associate',
-      issuer: 'Amazon Web Services',
+      name: 'Data Analysis with Python',
+      issuer: 'Programming Certification',
       date: '2023',
       icon: FaCertificate
     },
     {
       id: 2,
-      name: 'MongoDB Certified Developer',
-      issuer: 'MongoDB University',
-      date: '2022',
+      name: 'Python Data Representations',
+      issuer: 'Programming Certification',
+      date: '2023',
       icon: FaCertificate
     },
     {
       id: 3,
-      name: 'React Developer Certification',
-      issuer: 'Meta',
+      name: 'Python Programming Essentials',
+      issuer: 'Programming Certification',
+      date: '2023',
+      icon: FaCertificate
+    },
+    {
+      id: 4,
+      name: 'Introduction to Web Development',
+      issuer: 'Web Development Certification',
       date: '2022',
       icon: FaCertificate
     }
@@ -206,6 +189,18 @@ const Experience = () => {
               <FaTrophy />
               Certifications & Achievements
             </h3>
+            
+            {/* Publication Achievement */}
+            <div className="achievement-section">
+              <h4>Publications</h4>
+              <div className="achievement-item">
+                <div className="achievement-content">
+                  <h5>Published Poet</h5>
+                  <p>Authored and published a poem in Mirakee, recognized as part of the world's largest poetry anthology.</p>
+                  <span className="achievement-year">2023</span>
+                </div>
+              </div>
+            </div>
             <div className="certifications-grid">
               {certifications.map((cert, index) => (
                 <motion.div

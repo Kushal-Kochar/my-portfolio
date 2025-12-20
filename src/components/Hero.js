@@ -40,7 +40,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Full Stack Developer
+            Software Development Engineer
           </motion.h2>
           
           <motion.p 
@@ -49,8 +49,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Passionate about creating innovative web solutions and turning ideas into reality. 
-            Specialized in modern web technologies and user experience design.
+            Passionate about creating dynamic, scalable React.js applications and reusable components. 
+            Specialized in frontend development with expertise in modern web technologies and responsive design.
           </motion.p>
 
           <motion.div
@@ -138,16 +138,16 @@ const Hero = () => {
         >
           <div className="hero-image">
             <div className="floating-card card-1">
-              <span>React</span>
+              <span>React.js</span>
             </div>
             <div className="floating-card card-2">
-              <span>Node.js</span>
+              <span>JavaScript</span>
             </div>
             <div className="floating-card card-3">
-              <span>MongoDB</span>
+              <span>Spring Boot</span>
             </div>
             <div className="floating-card card-4">
-              <span>TypeScript</span>
+              <span>Java</span>
             </div>
           </div>
         </motion.div>

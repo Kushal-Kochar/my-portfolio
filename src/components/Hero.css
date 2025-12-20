@@ -5,6 +5,7 @@
   position: relative;
   background: var(--gradient-dark);
   overflow: hidden;
+  padding-top: 80px; /* Add space for fixed navbar */
 }
 
 .hero::before {
@@ -302,6 +303,10 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .hero {
+    padding-top: 90px; /* Increase padding for smaller screens */
+  }
+  
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
@@ -331,6 +336,10 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 100px; /* More padding for mobile */
+  }
+  
   .hero-container {
     padding: 0 1rem;
   }

@@ -33,23 +33,91 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      // Note: You'll need to set up EmailJS with your own service ID, template ID, and public key
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // Formspree configuration - much more reliable!
+      const formspreeEndpoint = 'https://formspree.io/f/xzdprevpg'; // Your Formspree endpoint
+      
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      };
 
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+      console.log('Sending email via Formspree:', submissionData);
+
+      // Send email using Formspree (reliable and corporate-network friendly)
+      const response = await fetch(formspreeEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData)
       });
+      
+      console.log('📧 Formspree response:', response.status);
+      
+      // Check if Formspree response is successful
+      if (response.ok) {
+        console.log('✅ Email delivered successfully to your Gmail!');
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        const errorText = await response.text();
+        console.error('Formspree error:', errorText);
+        throw new Error(`Formspree error: ${response.status}`);
+      }
 
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
+      
     } catch (error) {
-      setSubmitStatus("error");
-      setTimeout(() => setSubmitStatus(null), 5000);
+      console.error("❌ Formspree Error Details:", error);
+      
+      // Handle specific network errors with mailto fallback
+      if (error.message.includes('CORS') || 
+          error.message.includes('Failed to fetch') || 
+          error.message.includes('ERR_FAILED') ||
+          error.message.includes('NetworkError') ||
+          error.name === 'TypeError') {
+        
+        console.log('🔄 Network issue detected, using mailto fallback...');
+        
+        // Create mailto link as fallback
+        const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`);
+        const body = encodeURIComponent(
+          `Hi Kushal,\n\n` +
+          `Name: ${formData.name}\n` +
+          `Email: ${formData.email}\n` +
+          `Subject: ${formData.subject}\n\n` +
+          `Message:\n${formData.message}\n\n` +
+          `---\n` +
+          `Sent from your portfolio contact form`
+        );
+        
+        // Your actual email address
+        const mailtoLink = `mailto:kushalkochar45@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Open mailto link immediately
+        window.open(mailtoLink, '_self');
+        
+        setSubmitStatus("mailto_opened");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        
+      } else {
+        setSubmitStatus("error");
+      }
+      
+      setTimeout(() => setSubmitStatus(null), 8000);
     } finally {
       setIsSubmitting(false);
     }
@@ -218,7 +286,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  placeholder="your.email@example.com"
+                  placeholder="your.email@gmail.com"
                 />
               </div>
 
@@ -267,12 +335,16 @@ const Contact = () => {
                 >
                   {submitStatus === "success" ? (
                     <p>
-                      ✅ Message sent successfully! I'll get back to you soon.
+                      ✅ Message sent successfully! Your email has been delivered to my inbox. I'll get back to you soon.
+                    </p>
+                  ) : submitStatus === "mailto_opened" ? (
+                    <p>
+                      📧 Your email client has opened with the message pre-filled. 
+                      Just click send to deliver it to me!
                     </p>
                   ) : (
                     <p>
-                      ❌ Something went wrong. Please try again or contact me
-                      directly.
+                      ❌ Something went wrong. Please try again or contact me directly at kushalkochar45@gmail.com
                     </p>
                   )}
                 </motion.div>

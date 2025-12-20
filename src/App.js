@@ -8,9 +8,12 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WeatherDashboard from './components/WeatherDashboard';
+import TaskManager from './components/TaskManager';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [currentRoute, setCurrentRoute] = useState('/');
 
   useEffect(() => {
     // Simulate loading time for smooth experience
@@ -19,6 +22,24 @@ function App() {
     }, 1000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Simple hash-based routing
+    const handleHashChange = () => {
+      const hash = window.location.hash.substring(1) || '/';
+      setCurrentRoute(hash);
+    };
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Set initial route
+    handleHashChange();
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   if (loading) {
@@ -30,20 +51,32 @@ function App() {
     );
   }
 
-  return (
-    <div className="App">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  );
+  // Route rendering
+  const renderRoute = () => {
+    switch (currentRoute) {
+      case '/projects/weather-dashboard':
+        return <WeatherDashboard />;
+      case '/projects/task-manager':
+        return <TaskManager />;
+      default:
+        return (
+          <div className="App">
+            <Navbar />
+            <main>
+              <Hero />
+              <About />
+              <Skills />
+              <Projects />
+              <Experience />
+              <Contact />
+            </main>
+            <Footer />
+          </div>
+        );
+    }
+  };
+
+  return renderRoute();
 }
 
 export default App;

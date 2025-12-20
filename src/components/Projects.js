@@ -15,78 +15,44 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React frontend, Node.js backend, and MongoDB database. Features include user authentication, product management, shopping cart, and payment integration.',
-      image: 'https://via.placeholder.com/400x250/667eea/ffffff?text=E-Commerce',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-      category: 'fullstack',
-      github: 'https://github.com/yourusername/ecommerce',
-      live: 'https://ecommerce-demo.com',
-      featured: true
+      title: 'Personal Portfolio Website',
+      description: 'A modern, responsive portfolio website built with React.js and Framer Motion. Features smooth animations, interactive components, project showcases, and optimized performance. This very website you are viewing - fully functional and deployed.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80',
+      technologies: ['React.js', 'JavaScript', 'Framer Motion', 'CSS3', 'HTML5'],
+      category: 'frontend',
+      github: 'https://github.com/Kushal-Kochar/my-portfolio',
+      live: '#/',
+      featured: false
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://via.placeholder.com/400x250/f093fb/ffffff?text=Task+App',
-      technologies: ['React', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
+      title: 'Task Manager App',
+      description: 'A fully functional task management application with complete CRUD operations, priority levels, analytics dashboard, search/filter functionality, due date tracking, and local storage persistence. Features smooth animations and responsive design.',
+      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80',
+      technologies: ['React.js', 'JavaScript', 'Local Storage', 'CSS3', 'HTML5'],
       category: 'frontend',
-      github: 'https://github.com/yourusername/task-app',
-      live: 'https://task-app-demo.com',
+      github: 'https://github.com/Kushal-Kochar/my-portfolio/tree/main/projects/task-manager',
+      live: '#/projects/task-manager',
       featured: true
     },
     {
       id: 3,
-      title: 'REST API Service',
-      description: 'A scalable REST API built with Node.js, Express, and PostgreSQL. Includes authentication, rate limiting, and comprehensive documentation.',
-      image: 'https://via.placeholder.com/400x250/4facfe/ffffff?text=API+Service',
-      technologies: ['Node.js', 'Express', 'PostgreSQL', 'JWT', 'Swagger'],
-      category: 'backend',
-      github: 'https://github.com/yourusername/api-service',
-      live: 'https://api-docs.com',
-      featured: false
-    },
-    {
-      id: 4,
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React and Framer Motion. Features smooth animations and optimized performance.',
-      image: 'https://via.placeholder.com/400x250/43e97b/ffffff?text=Portfolio',
-      technologies: ['React', 'Framer Motion', 'CSS3', 'Responsive Design'],
-      category: 'frontend',
-      github: 'https://github.com/yourusername/portfolio',
-      live: 'https://portfolio-demo.com',
-      featured: false
-    },
-    {
-      id: 5,
       title: 'Weather Dashboard',
-      description: 'A weather application that displays current and forecasted weather data with interactive charts and location-based services.',
-      image: 'https://via.placeholder.com/400x250/fa709a/ffffff?text=Weather+App',
-      technologies: ['React', 'Chart.js', 'OpenWeather API', 'Geolocation'],
+      description: 'A real-time weather application displaying current conditions and 5-day forecasts with beautiful UI. Features city search, geolocation services, weather icons, and fully responsive design. Live weather data integration ready.',
+      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80',
+      technologies: ['React.js', 'JavaScript', 'Weather API', 'Geolocation', 'CSS3'],
       category: 'frontend',
-      github: 'https://github.com/yourusername/weather-app',
-      live: 'https://weather-demo.com',
-      featured: false
+      github: 'https://github.com/Kushal-Kochar/my-portfolio/tree/main/projects/weather-dashboard',
+      live: '#/projects/weather-dashboard',
+      featured: true
     },
-    {
-      id: 6,
-      title: 'Microservices Architecture',
-      description: 'A microservices-based application demonstrating distributed system design with Docker, Kubernetes, and message queues.',
-      image: 'https://via.placeholder.com/400x250/667eea/ffffff?text=Microservices',
-      technologies: ['Docker', 'Kubernetes', 'Node.js', 'Redis', 'RabbitMQ'],
-      category: 'devops',
-      github: 'https://github.com/yourusername/microservices',
-      live: 'https://microservices-demo.com',
-      featured: false
-    }
   ];
 
   const categories = [
     { id: 'all', name: 'All Projects' },
-    { id: 'fullstack', name: 'Full Stack' },
     { id: 'frontend', name: 'Frontend' },
-    { id: 'backend', name: 'Backend' },
-    { id: 'devops', name: 'DevOps' }
+    { id: 'fullstack', name: 'Full Stack' },
+    { id: 'backend', name: 'Backend' }
   ];
 
   const filteredProjects = filter === 'all' 
@@ -197,9 +163,13 @@ const Projects = () => {
                     </a>
                     <a
                       href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target={project.live.startsWith('#') ? '_self' : '_blank'}
+                      rel={project.live.startsWith('#') ? '' : 'noopener noreferrer'}
                       className="btn btn-primary"
+                      onClick={project.live.startsWith('#') ? (e) => {
+                        e.preventDefault();
+                        window.location.hash = project.live.substring(1);
+                      } : undefined}
                     >
                       <FaExternalLinkAlt />
                       Live Demo

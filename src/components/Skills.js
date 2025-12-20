@@ -21,38 +21,32 @@ const Skills = () => {
     {
       title: 'Frontend Development',
       skills: [
-        { name: 'HTML5', icon: FaHtml5, level: 95, color: '#E34F26' },
-        { name: 'CSS3', icon: FaCss3Alt, level: 90, color: '#1572B6' },
-        { name: 'JavaScript', icon: FaJs, level: 92, color: '#F7DF1E' },
-        { name: 'TypeScript', icon: SiTypescript, level: 88, color: '#3178C6' },
-        { name: 'React.js', icon: FaReact, level: 90, color: '#61DAFB' },
-        { name: 'Next.js', icon: SiNextdotjs, level: 85, color: '#000000' },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, level: 88, color: '#06B6D4' }
+        { name: 'HTML5', icon: FaHtml5, level: 90, color: '#E34F26' },
+        { name: 'CSS3', icon: FaCss3Alt, level: 88, color: '#1572B6' },
+        { name: 'JavaScript', icon: FaJs, level: 85, color: '#F7DF1E' },
+        { name: 'React.js', icon: FaReact, level: 90, color: '#61DAFB' }
       ]
     },
     {
       title: 'Backend Development',
       skills: [
-        { name: 'Node.js', icon: FaNodeJs, level: 88, color: '#339933' },
-        { name: 'Express.js', icon: SiExpress, level: 85, color: '#000000' },
-        { name: 'Python', icon: FaPython, level: 80, color: '#3776AB' },
-        { name: 'Java', icon: FaJava, level: 75, color: '#ED8B00' }
+        { name: 'Node.js', icon: FaNodeJs, level: 75, color: '#339933' },
+        { name: 'Java', icon: FaJava, level: 80, color: '#ED8B00' },
+        { name: 'Python', icon: FaPython, level: 78, color: '#3776AB' }
       ]
     },
     {
-      title: 'Database & Cloud',
+      title: 'Database & Tools',
       skills: [
-        { name: 'MongoDB', icon: SiMongodb, level: 85, color: '#47A248' },
-        { name: 'PostgreSQL', icon: SiPostgresql, level: 80, color: '#336791' },
-        { name: 'AWS', icon: FaAws, level: 75, color: '#FF9900' },
-        { name: 'Docker', icon: FaDocker, level: 70, color: '#2496ED' }
+        { name: 'SQL', icon: SiPostgresql, level: 75, color: '#336791' },
+        { name: 'Git', icon: FaGitAlt, level: 85, color: '#F05032' }
       ]
     },
     {
-      title: 'Tools & Others',
+      title: 'Frameworks & Libraries',
       skills: [
-        { name: 'Git', icon: FaGitAlt, level: 90, color: '#F05032' },
-        { name: 'Figma', icon: FaFigma, level: 75, color: '#F24E1E' }
+        { name: 'Spring Boot', icon: FaJava, level: 78, color: '#6DB33F' },
+        { name: 'SAP Fiori', icon: FaReact, level: 70, color: '#0FAAFF' }
       ]
     }
   ];
@@ -134,10 +128,10 @@ const Skills = () => {
               to expand my skill set.
             </p>
             <div className="learning-topics">
-              <span className="topic">GraphQL</span>
-              <span className="topic">Microservices</span>
-              <span className="topic">Serverless</span>
-              <span className="topic">Machine Learning</span>
+              <span className="topic">TypeScript</span>
+              <span className="topic">Next.js</span>
+              <span className="topic">Cloud Technologies</span>
+              <span className="topic">Advanced React Patterns</span>
             </div>
           </div>
         </motion.div>

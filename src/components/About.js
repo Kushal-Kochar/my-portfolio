@@ -1,36 +1,40 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaCode, FaLightbulb, FaRocket, FaUsers } from 'react-icons/fa';
-import './About.css';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { FaCode, FaLightbulb, FaRocket, FaUsers } from "react-icons/fa";
+import "./About.css";
 
 const About = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   const features = [
     {
       icon: FaCode,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable code that follows best practices and industry standards.'
+      title: "Clean Code",
+      description:
+        "Writing maintainable, scalable code that follows best practices and industry standards.",
     },
     {
       icon: FaLightbulb,
-      title: 'Problem Solver',
-      description: 'Approaching complex challenges with innovative solutions and creative thinking.'
+      title: "Problem Solver",
+      description:
+        "Approaching complex challenges with innovative solutions and creative thinking.",
     },
     {
       icon: FaRocket,
-      title: 'Fast Learner',
-      description: 'Quickly adapting to new technologies and frameworks to deliver cutting-edge solutions.'
+      title: "Fast Learner",
+      description:
+        "Quickly adapting to new technologies and frameworks to deliver cutting-edge solutions.",
     },
     {
       icon: FaUsers,
-      title: 'Team Player',
-      description: 'Collaborating effectively with cross-functional teams to achieve project goals.'
-    }
+      title: "Team Player",
+      description:
+        "Collaborating effectively with cross-functional teams to achieve project goals.",
+    },
   ];
 
   return (
@@ -53,19 +57,27 @@ const About = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3>Passionate Full Stack Developer</h3>
+            <h3>Passionate Software Development Engineer</h3>
             <p>
-              I'm a passionate Full Stack Developer based in Mumbai, India, with a strong foundation in both frontend and backend technologies. 
-              My journey in web development started with curiosity and has evolved into a deep passion for creating innovative digital solutions.
+              I'm a passionate Software Development Engineer based in Mumbai,
+              India, with a strong foundation in frontend development and modern
+              web technologies. My journey in software development started
+              during my Computer Engineering studies and has evolved into a deep
+              passion for creating scalable, user-friendly applications.
             </p>
             <p>
-              I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends. 
-              My experience spans across various technologies including React, Node.js, Python, and cloud platforms like AWS.
+              Currently working at Jio Platforms Ltd., I specialize in React.js
+              development, creating reusable components and building dynamic
+              user interfaces. My experience includes working with modern tech
+              stacks including React.js, JavaScript, Java Spring Boot, and CI/CD
+              pipelines.
             </p>
             <p>
-              When I'm not coding, you'll find me exploring new technologies, contributing 
-              to open-source projects, or sharing knowledge with the developer community. 
-              I'm always eager to learn and take on new challenges that push my boundaries.
+              I believe in writing clean, maintainable code and optimizing
+              application performance. I'm passionate about translating UI/UX
+              designs into responsive, cross-platform interfaces and
+              continuously learning new technologies to deliver cutting-edge
+              solutions.
             </p>
 
             <div className="about-stats">
@@ -74,12 +86,12 @@ const About = () => {
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat">
-                <span className="stat-number">50+</span>
-                <span className="stat-label">Projects Completed</span>
+                <span className="stat-number">10+</span>
+                <span className="stat-label">Modules Developed</span>
               </div>
               <div className="stat">
-                <span className="stat-number">100%</span>
-                <span className="stat-label">Client Satisfaction</span>
+                <span className="stat-number">15-20%</span>
+                <span className="stat-label">Efficiency Boost</span>
               </div>
             </div>
           </motion.div>
@@ -120,7 +132,11 @@ const About = () => {
             className="btn btn-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })}
+            onClick={() =>
+              document
+                .querySelector("#contact")
+                .scrollIntoView({ behavior: "smooth" })
+            }
           >
             Let's Connect
           </motion.button>
