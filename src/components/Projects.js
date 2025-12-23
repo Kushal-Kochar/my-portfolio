@@ -46,6 +46,39 @@ const Projects = () => {
       live: '#/projects/weather-dashboard',
       featured: true
     },
+    {
+      id: 4,
+      title: 'AI Chat Assistant',
+      description: 'Intelligent chatbot application with multiple AI integrations (Groq, OpenAI, Hugging Face). Features real-time conversations, different AI personalities, smart fallback responses, user authentication, conversation management, and professional UI/UX.',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80',
+      technologies: ['React.js', 'Groq API', 'OpenAI API', 'Hugging Face', 'Context API', 'Framer Motion', 'CSS3'],
+      category: 'fullstack',
+      github: 'https://github.com/Kushal-Kochar/my-portfolio/tree/main/projects/ai-chat-assistant',
+      live: 'http://localhost:3001',
+      featured: true
+    },
+    {
+      id: 5,
+      title: 'Real-time Analytics Dashboard',
+      description: 'Comprehensive data visualization dashboard with live charts, metrics tracking, and interactive widgets. Features real-time data updates, customizable layouts, export functionality, and responsive design optimized for business intelligence.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80',
+      technologies: ['React.js', 'D3.js', 'Chart.js', 'WebSocket', 'Node.js', 'MongoDB', 'Redis'],
+      category: 'fullstack',
+      github: 'https://github.com/Kushal-Kochar/analytics-dashboard',
+      live: 'https://kushal-analytics-dashboard.netlify.app',
+      featured: true
+    },
+    {
+      id: 6,
+      title: 'Modern E-commerce Platform',
+      description: 'Full-featured e-commerce application with shopping cart, secure checkout, user authentication, product management, order tracking, and payment integration. Built with modern React patterns and state management.',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80',
+      technologies: ['React.js', 'Redux', 'Stripe API', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+      category: 'fullstack',
+      github: 'https://github.com/Kushal-Kochar/ecommerce-platform',
+      live: 'https://kushal-ecommerce.netlify.app',
+      featured: false
+    }
   ];
 
   const categories = [

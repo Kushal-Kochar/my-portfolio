@@ -1,0 +1,58 @@
+.theme-toggle {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 1500;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 3px solid #6366f1;
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  /* Make sure it's always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.theme-toggle:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.theme-toggle-icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sun-icon {
+  color: #f59e0b;
+}
+
+.moon-icon {
+  color: #6366f1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 85px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #6366f1;
+  }
+  
+  .theme-toggle-icon {
+    font-size: 20px;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WeatherDashboard from './components/WeatherDashboard';
 import TaskManager from './components/TaskManager';
+import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -76,7 +78,12 @@ function App() {
     }
   };
 
-  return renderRoute();
+  return (
+    <ThemeProvider>
+      <ThemeToggle />
+      {renderRoute()}
+    </ThemeProvider>
+  );
 }
 
 export default App;
