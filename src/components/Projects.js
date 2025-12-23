@@ -53,7 +53,7 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80',
       technologies: ['React.js', 'Groq API', 'OpenAI API', 'Hugging Face', 'Context API', 'Framer Motion', 'CSS3'],
       category: 'fullstack',
-      github: 'https://github.com/Kushal-Kochar/my-portfolio/tree/main/projects/ai-chat-assistant',
+      github: 'https://github.com/Kushal-Kochar/ai-chat-assistant',
       live: 'https://kushal-kochar.github.io/ai-chat-assistant',
       featured: true
     },
