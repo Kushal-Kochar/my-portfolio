@@ -54,7 +54,7 @@ const Projects = () => {
       technologies: ['React.js', 'Groq API', 'OpenAI API', 'Hugging Face', 'Context API', 'Framer Motion', 'CSS3'],
       category: 'fullstack',
       github: 'https://github.com/Kushal-Kochar/ai-chat-assistant',
-      live: 'https://kushal-kochar.github.io/ai-chat-assistant',
+      live: 'https://694a438279d1b9a365861b25--peppy-lily-d5f7d9.netlify.app/',
       featured: true
     },
     {
